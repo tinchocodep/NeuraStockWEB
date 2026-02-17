@@ -121,49 +121,49 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                             </span>
                         </div>
                     </motion.div>
-
-                    {/* Interactive Prompt - Floating annotation */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{
-                            opacity: activeScreen === 2 ? 1 : 0,
-                            x: activeScreen === 2 ? 0 : 20,
-                        }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="absolute top-1/2 -translate-y-1/2 left-0 pointer-events-none z-[9999]"
-                    >
-                        <div className="relative">
-                            {/* Arrow pointing to the card */}
-                            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M19 12H5m0 0l6 6m-6-6l6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400/50" />
-                                </svg>
-                            </div>
-
-                            {/* Annotation card */}
-                            <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 backdrop-blur-md border border-cyan-500/40 rounded-xl px-4 py-3 shadow-xl">
-                                <div className="flex items-center gap-2.5">
-                                    <motion.div
-                                        animate={{
-                                            scale: [1, 1.3, 1],
-                                            opacity: [0.6, 1, 0.6],
-                                        }}
-                                        transition={{
-                                            duration: 2,
-                                            repeat: Infinity,
-                                            ease: "easeInOut",
-                                        }}
-                                        className="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
-                                    />
-                                    <span className="text-cyan-300 text-sm font-semibold whitespace-nowrap">
-                                        Probá buscando una persona en ARCA
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
                 </motion.div>
             </div>
+
+            {/* Interactive Prompt - Floating annotation (outside grid) */}
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{
+                    opacity: activeScreen === 2 ? 1 : 0,
+                    x: activeScreen === 2 ? 0 : 20,
+                }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="fixed top-1/2 -translate-y-1/2 left-8 pointer-events-none z-[9999] hidden lg:block"
+            >
+                <div className="relative">
+                    {/* Arrow pointing to the right */}
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 12H5m0 0l6 6m-6-6l6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400/50" />
+                        </svg>
+                    </div>
+
+                    {/* Annotation card */}
+                    <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 backdrop-blur-md border border-cyan-500/40 rounded-xl px-4 py-3 shadow-xl">
+                        <div className="flex items-center gap-2.5">
+                            <motion.div
+                                animate={{
+                                    scale: [1, 1.3, 1],
+                                    opacity: [0.6, 1, 0.6],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                className="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
+                            />
+                            <span className="text-cyan-300 text-sm font-semibold whitespace-nowrap">
+                                Probá buscando una persona en ARCA
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
 
             {/* Bottom Gradient Fade */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
