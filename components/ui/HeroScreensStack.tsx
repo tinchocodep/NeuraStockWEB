@@ -6,7 +6,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import DashboardMockup from '@/components/ui/DashboardMockup';
 import InteractiveClientForm from '@/components/ui/InteractiveClientForm';
@@ -17,10 +17,31 @@ interface HeroScreensStackProps {
 
 const HeroScreensStack: React.FC<HeroScreensStackProps> = ({ onScreenChange }) => {
     const [activeScreen, setActiveScreen] = useState<1 | 2>(1);
+    const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleScreenChange = (screen: 1 | 2) => {
         setActiveScreen(screen);
         onScreenChange?.(screen);
+    };
+
+    const handleMouseEnter = (screen: 1 | 2) => {
+        // Clear any existing timeout
+        if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+        }
+
+        // Set a new timeout to change the screen after 300ms
+        hoverTimeoutRef.current = setTimeout(() => {
+            handleScreenChange(screen);
+        }, 300);
+    };
+
+    const handleMouseLeave = () => {
+        // Clear timeout if mouse leaves before delay completes
+        if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+        }
     };
 
     const springTransition = {
@@ -40,7 +61,8 @@ const HeroScreensStack: React.FC<HeroScreensStackProps> = ({ onScreenChange }) =
             {/* SCREEN 1 - Dashboard */}
             <motion.div
                 className="absolute cursor-pointer"
-                onMouseEnter={() => setActiveScreen(1)}
+                onMouseEnter={() => handleMouseEnter(1)}
+                onMouseLeave={handleMouseLeave}
                 animate={{
                     zIndex: activeScreen === 1 ? 20 : 10,
                     scale: activeScreen === 1 ? 1 : 0.92,
@@ -88,7 +110,8 @@ const HeroScreensStack: React.FC<HeroScreensStackProps> = ({ onScreenChange }) =
             {/* SCREEN 2 - Invoice (Behind, top-right corner visible) */}
             <motion.div
                 className="absolute cursor-pointer"
-                onMouseEnter={() => setActiveScreen(2)}
+                onMouseEnter={() => handleMouseEnter(2)}
+                onMouseLeave={handleMouseLeave}
                 animate={{
                     zIndex: activeScreen === 2 ? 20 : 10,
                     scale: activeScreen === 2 ? 1 : 0.92,
