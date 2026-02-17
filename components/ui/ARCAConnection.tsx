@@ -9,6 +9,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 const ARCAConnection: React.FC = () => {
     return (
@@ -87,9 +88,15 @@ const ARCAConnection: React.FC = () => {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/50"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-20 h-20 flex items-center justify-center"
             >
-                <span className="text-white text-xs font-bold">ARCA</span>
+                <Image
+                    src="/images/arca-logo.png"
+                    alt="ARCA Logo"
+                    width={80}
+                    height={80}
+                    className="object-contain drop-shadow-2xl"
+                />
             </motion.div>
 
             {/* Approval Check (appears periodically) */}
