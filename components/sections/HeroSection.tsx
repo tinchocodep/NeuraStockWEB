@@ -129,50 +129,46 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                 </motion.div>
             </div>
 
-            {/* Interactive Prompt - Floating annotation (outside grid) */}
+            {/* Floating Prompt Banner - Always visible on screen 2 */}
             <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
                     opacity: activeScreen === 2 ? 1 : 0,
-                    x: activeScreen === 2 ? 0 : 20,
-                    y: activeScreen === 2 ? [0, -10, 0] : 0, // Floating animation
+                    scale: activeScreen === 2 ? 1 : 0.8,
+                    y: activeScreen === 2 ? [0, -15, 0] : 0,
                 }}
                 transition={{
-                    duration: 0.5,
-                    delay: 0.4,
+                    opacity: { duration: 0.3 },
+                    scale: { duration: 0.3 },
                     y: {
-                        duration: 2,
+                        duration: 2.5,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }
                 }}
-                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999] hidden lg:block"
+                className="fixed top-24 right-8 pointer-events-none z-[9999] hidden lg:block"
             >
                 <div className="relative">
-                    {/* Arrow pointing to the right */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M19 12H5m0 0l6 6m-6-6l6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400/50" />
-                        </svg>
-                    </div>
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-lg" />
 
-                    {/* Annotation card */}
-                    <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 backdrop-blur-md border border-cyan-500/40 rounded-lg px-3 py-2 shadow-xl">
-                        <div className="flex items-center gap-2">
+                    {/* Banner card */}
+                    <div className="relative bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-3 shadow-2xl shadow-cyan-500/30">
+                        <div className="flex items-center gap-3">
                             <motion.div
                                 animate={{
-                                    scale: [1, 1.3, 1],
-                                    opacity: [0.6, 1, 0.6],
+                                    scale: [1, 1.4, 1],
+                                    opacity: [0.7, 1, 0.7],
                                 }}
                                 transition={{
-                                    duration: 2,
+                                    duration: 1.5,
                                     repeat: Infinity,
                                     ease: "easeInOut",
                                 }}
-                                className="w-2 h-2 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
+                                className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/70"
                             />
-                            <span className="text-cyan-300 text-xs font-medium whitespace-nowrap">
-                                Probá buscando una persona en ARCA
+                            <span className="text-cyan-200 text-sm font-semibold whitespace-nowrap">
+                                👉 Probá buscando una persona en ARCA
                             </span>
                         </div>
                     </div>
