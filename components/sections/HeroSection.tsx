@@ -129,19 +129,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                 </motion.div>
             </div>
 
-            {/* Floating Prompt Banner - ALWAYS VISIBLE FOR TESTING */}
+            {/* Floating Prompt Banner - Shows on screen 2 */}
             <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
-                    y: [0, -15, 0],
+                    opacity: activeScreen === 2 ? 1 : 0,
+                    scale: activeScreen === 2 ? 1 : 0.8,
+                    y: activeScreen === 2 ? [0, -15, 0] : 0,
                 }}
                 transition={{
+                    opacity: { duration: 0.3 },
+                    scale: { duration: 0.3 },
                     y: {
                         duration: 2.5,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }
                 }}
-                className="fixed top-24 right-8 z-[9999]"
+                className="fixed top-24 right-8 pointer-events-none z-[9999]"
             >
                 <div className="relative">
                     {/* Glow effect */}
