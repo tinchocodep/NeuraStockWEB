@@ -97,9 +97,9 @@ const DashboardMockup: React.FC = () => {
             </div>
 
             {/* Bottom Section: Categories and Alerts */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 flex-1">
                 {/* Top Categorías */}
-                <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-4">
+                <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-4 flex flex-col">
                     <h3 className="text-white font-semibold mb-3 text-xs">Top Categorías por Valor</h3>
 
                     {/* Varios */}
@@ -123,10 +123,43 @@ const DashboardMockup: React.FC = () => {
                             <div className="bg-cyan-500 h-1.5 rounded-full" style={{ width: '23.2%' }}></div>
                         </div>
                     </div>
+
+                    {/* Hogar */}
+                    <div className="mb-3">
+                        <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-slate-300 text-xs">Hogar</span>
+                            <span className="text-cyan-400 text-xs font-semibold">18.5%</span>
+                        </div>
+                        <div className="w-full bg-slate-800 rounded-full h-1.5">
+                            <div className="bg-cyan-500 h-1.5 rounded-full" style={{ width: '18.5%' }}></div>
+                        </div>
+                    </div>
+
+                    {/* Deportes */}
+                    <div className="mb-3">
+                        <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-slate-300 text-xs">Deportes</span>
+                            <span className="text-cyan-400 text-xs font-semibold">12.8%</span>
+                        </div>
+                        <div className="w-full bg-slate-800 rounded-full h-1.5">
+                            <div className="bg-cyan-500 h-1.5 rounded-full" style={{ width: '12.8%' }}></div>
+                        </div>
+                    </div>
+
+                    {/* Oficina */}
+                    <div>
+                        <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-slate-300 text-xs">Oficina</span>
+                            <span className="text-cyan-400 text-xs font-semibold">8.3%</span>
+                        </div>
+                        <div className="w-full bg-slate-800 rounded-full h-1.5">
+                            <div className="bg-cyan-500 h-1.5 rounded-full" style={{ width: '8.3%' }}></div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Alertas de Stock */}
-                <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-4">
+                <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-4 flex flex-col">
                     <h3 className="text-white font-semibold mb-3 text-xs">Alertas de Stock</h3>
 
                     {/* Abanico 1 */}
@@ -143,6 +176,36 @@ const DashboardMockup: React.FC = () => {
                     <div className="flex items-center justify-between">
                         <div>
                             <p className="text-slate-300 text-xs font-medium">Abanico</p>
+                        </div>
+                        <span className="px-1.5 py-0.5 bg-red-500/20 border border-red-500/30 rounded text-red-400 text-[10px] font-semibold">
+                            AGOTADO
+                        </span>
+                    </div>
+
+                    {/* Ventilador */}
+                    <div className="flex items-center justify-between mb-2.5 pb-2.5 border-b border-slate-800">
+                        <div>
+                            <p className="text-slate-300 text-xs font-medium">Ventilador</p>
+                        </div>
+                        <span className="px-1.5 py-0.5 bg-yellow-500/20 border border-yellow-500/30 rounded text-yellow-400 text-[10px] font-semibold">
+                            BAJO
+                        </span>
+                    </div>
+
+                    {/* Lampara */}
+                    <div className="flex items-center justify-between mb-2.5 pb-2.5 border-b border-slate-800">
+                        <div>
+                            <p className="text-slate-300 text-xs font-medium">Lámpara LED</p>
+                        </div>
+                        <span className="px-1.5 py-0.5 bg-yellow-500/20 border border-yellow-500/30 rounded text-yellow-400 text-[10px] font-semibold">
+                            BAJO
+                        </span>
+                    </div>
+
+                    {/* Escritorio */}
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-slate-300 text-xs font-medium">Escritorio</p>
                         </div>
                         <span className="px-1.5 py-0.5 bg-red-500/20 border border-red-500/30 rounded text-red-400 text-[10px] font-semibold">
                             AGOTADO
