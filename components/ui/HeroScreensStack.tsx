@@ -156,7 +156,7 @@ const HeroScreensStack: React.FC = () => {
                     x: activeScreen === 2 ? 0 : 20,
                 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute top-1/2 -translate-y-1/2 left-[-280px] pointer-events-none z-50"
+                className="absolute top-1/2 -translate-y-1/2 left-[-280px] pointer-events-none z-[9999]"
             >
                 <div className="relative">
                     {/* Arrow pointing to the card */}
