@@ -135,8 +135,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                 animate={{
                     opacity: activeScreen === 2 ? 1 : 0,
                     x: activeScreen === 2 ? 0 : 20,
+                    y: activeScreen === 2 ? [0, -10, 0] : 0, // Floating animation
                 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.4,
+                    y: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }
+                }}
                 className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999] hidden lg:block"
             >
                 <div className="relative">
