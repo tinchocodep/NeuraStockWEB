@@ -132,7 +132,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                     x: activeScreen === 2 ? 0 : 20,
                 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="fixed top-1/2 -translate-y-1/2 left-8 pointer-events-none z-[9999] hidden lg:block"
+                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999] hidden lg:block"
             >
                 <div className="relative">
                     {/* Arrow pointing to the right */}
