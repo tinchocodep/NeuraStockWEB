@@ -147,6 +147,35 @@ const HeroScreensStack: React.FC = () => {
                     transition={springTransition}
                 />
             </div>
+
+            {/* Interactive Prompt - Only visible when screen 2 is active */}
+            <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{
+                    opacity: activeScreen === 2 ? 1 : 0,
+                    y: activeScreen === 2 ? 0 : 10,
+                }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none"
+            >
+                <div className="bg-cyan-500/10 backdrop-blur-sm border border-cyan-500/30 rounded-full px-4 py-2 flex items-center gap-2">
+                    <motion.div
+                        animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                        className="w-2 h-2 bg-cyan-400 rounded-full"
+                    />
+                    <span className="text-cyan-400 text-sm font-medium">
+                        Probá buscando una persona en ARCA
+                    </span>
+                </div>
+            </motion.div>
         </div>
     );
 };
