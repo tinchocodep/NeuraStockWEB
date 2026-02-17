@@ -96,62 +96,57 @@ const DashboardMockup: React.FC = () => {
                 </div>
             </div>
 
-            {/* Bottom Section: Categories */}
-            <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-5">
-                <h3 className="text-white font-semibold mb-5 text-sm">Top Categorías por Valor</h3>
+            {/* Bottom Section: Categories and Alerts */}
+            <div className="grid grid-cols-2 gap-3">
+                {/* Top Categorías */}
+                <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-4">
+                    <h3 className="text-white font-semibold mb-3 text-xs">Top Categorías por Valor</h3>
 
-                {/* Varios */}
-                <div className="mb-5">
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-slate-300 text-sm">Varios</span>
-                        <span className="text-cyan-400 text-sm font-semibold">100.0%</span>
+                    {/* Varios */}
+                    <div className="mb-3">
+                        <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-slate-300 text-xs">Varios</span>
+                            <span className="text-cyan-400 text-xs font-semibold">100.0%</span>
+                        </div>
+                        <div className="w-full bg-slate-800 rounded-full h-1.5">
+                            <div className="bg-cyan-500 h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                        </div>
                     </div>
-                    <div className="w-full bg-slate-800 rounded-full h-2.5">
-                        <div className="bg-cyan-500 h-2.5 rounded-full" style={{ width: '100%' }}></div>
+
+                    {/* Electronica */}
+                    <div>
+                        <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-slate-300 text-xs">Electronica</span>
+                            <span className="text-cyan-400 text-xs font-semibold">23.2%</span>
+                        </div>
+                        <div className="w-full bg-slate-800 rounded-full h-1.5">
+                            <div className="bg-cyan-500 h-1.5 rounded-full" style={{ width: '23.2%' }}></div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Electronica */}
-                <div className="mb-5">
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-slate-300 text-sm">Electrónica</span>
-                        <span className="text-cyan-400 text-sm font-semibold">23.2%</span>
-                    </div>
-                    <div className="w-full bg-slate-800 rounded-full h-2.5">
-                        <div className="bg-cyan-500 h-2.5 rounded-full" style={{ width: '23.2%' }}></div>
-                    </div>
-                </div>
+                {/* Alertas de Stock */}
+                <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-4">
+                    <h3 className="text-white font-semibold mb-3 text-xs">Alertas de Stock</h3>
 
-                {/* Hogar */}
-                <div className="mb-5">
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-slate-300 text-sm">Hogar</span>
-                        <span className="text-cyan-400 text-sm font-semibold">18.5%</span>
+                    {/* Abanico 1 */}
+                    <div className="flex items-center justify-between mb-2.5 pb-2.5 border-b border-slate-800">
+                        <div>
+                            <p className="text-slate-300 text-xs font-medium">Abanico</p>
+                        </div>
+                        <span className="px-1.5 py-0.5 bg-red-500/20 border border-red-500/30 rounded text-red-400 text-[10px] font-semibold">
+                            AGOTADO
+                        </span>
                     </div>
-                    <div className="w-full bg-slate-800 rounded-full h-2.5">
-                        <div className="bg-cyan-500 h-2.5 rounded-full" style={{ width: '18.5%' }}></div>
-                    </div>
-                </div>
 
-                {/* Deportes */}
-                <div className="mb-5">
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-slate-300 text-sm">Deportes</span>
-                        <span className="text-cyan-400 text-sm font-semibold">12.8%</span>
-                    </div>
-                    <div className="w-full bg-slate-800 rounded-full h-2.5">
-                        <div className="bg-cyan-500 h-2.5 rounded-full" style={{ width: '12.8%' }}></div>
-                    </div>
-                </div>
-
-                {/* Oficina */}
-                <div>
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-slate-300 text-sm">Oficina</span>
-                        <span className="text-cyan-400 text-sm font-semibold">8.3%</span>
-                    </div>
-                    <div className="w-full bg-slate-800 rounded-full h-2.5">
-                        <div className="bg-cyan-500 h-2.5 rounded-full" style={{ width: '8.3%' }}></div>
+                    {/* Abanico 2 */}
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-slate-300 text-xs font-medium">Abanico</p>
+                        </div>
+                        <span className="px-1.5 py-0.5 bg-red-500/20 border border-red-500/30 rounded text-red-400 text-[10px] font-semibold">
+                            AGOTADO
+                        </span>
                     </div>
                 </div>
             </div>
