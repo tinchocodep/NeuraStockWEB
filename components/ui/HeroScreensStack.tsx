@@ -148,21 +148,21 @@ const HeroScreensStack: React.FC = () => {
                 />
             </div>
 
-            {/* Interactive Prompt - Floating annotation on the right */}
+            {/* Interactive Prompt - Floating annotation on the left */}
             <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{
                     opacity: activeScreen === 2 ? 1 : 0,
-                    x: activeScreen === 2 ? 0 : -20,
+                    x: activeScreen === 2 ? 0 : 20,
                 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute top-1/2 -translate-y-1/2 right-[-280px] pointer-events-none z-50"
+                className="absolute top-1/2 -translate-y-1/2 left-[-280px] pointer-events-none z-50"
             >
                 <div className="relative">
                     {/* Arrow pointing to the card */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6">
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400/50" />
+                            <path d="M19 12H5m0 0l6 6m-6-6l6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400/50" />
                         </svg>
                     </div>
 
