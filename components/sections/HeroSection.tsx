@@ -104,6 +104,52 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                         {/* Glassmorphism Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-10" />
 
+                        {/* Floating Prompt Banner - Top-left of container */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                                y: [0, -15, 0],
+                            }}
+                            transition={{
+                                opacity: { duration: 0.3 },
+                                scale: { duration: 0.3 },
+                                y: {
+                                    duration: 2.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }
+                            }}
+                            className="absolute top-4 left-4 pointer-events-none z-50"
+                        >
+                            <div className="relative">
+                                {/* Glow effect */}
+                                <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-lg" />
+
+                                {/* Banner card */}
+                                <div className="relative bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-3 shadow-2xl shadow-cyan-500/30">
+                                    <div className="flex items-center gap-3">
+                                        <motion.div
+                                            animate={{
+                                                scale: [1, 1.4, 1],
+                                                opacity: [0.7, 1, 0.7],
+                                            }}
+                                            transition={{
+                                                duration: 1.5,
+                                                repeat: Infinity,
+                                                ease: "easeInOut",
+                                            }}
+                                            className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/70"
+                                        />
+                                        <span className="text-cyan-200 text-sm font-semibold whitespace-nowrap">
+                                            👉 Probá buscando una persona en ARCA
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
                         {/* Interactive Screens Stack */}
                         <HeroScreensStack onScreenChange={handleScreenChange} />
                     </motion.div>
@@ -128,52 +174,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                     </motion.div>
                 </motion.div>
             </div>
-
-            {/* Floating Prompt Banner - Shows on screen 2 */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{
-                    opacity: activeScreen === 2 ? 1 : 0,
-                    scale: activeScreen === 2 ? 1 : 0.8,
-                    y: activeScreen === 2 ? [0, -15, 0] : 0,
-                }}
-                transition={{
-                    opacity: { duration: 0.3 },
-                    scale: { duration: 0.3 },
-                    y: {
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }
-                }}
-                className="fixed top-32 left-8 pointer-events-none z-[9999]"
-            >
-                <div className="relative">
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-lg" />
-
-                    {/* Banner card */}
-                    <div className="relative bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-3 shadow-2xl shadow-cyan-500/30">
-                        <div className="flex items-center gap-3">
-                            <motion.div
-                                animate={{
-                                    scale: [1, 1.4, 1],
-                                    opacity: [0.7, 1, 0.7],
-                                }}
-                                transition={{
-                                    duration: 1.5,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
-                                className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/70"
-                            />
-                            <span className="text-cyan-200 text-sm font-semibold whitespace-nowrap">
-                                👉 Probá buscando una persona en ARCA
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </motion.div>
 
             {/* Bottom Gradient Fade */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
