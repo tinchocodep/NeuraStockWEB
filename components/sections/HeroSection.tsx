@@ -17,6 +17,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
     const [isDashboardHovered, setIsDashboardHovered] = useState(false);
     const [activeScreen, setActiveScreen] = useState<1 | 2>(1);
 
+    const handleScreenChange = (screen: 1 | 2) => {
+        console.log('🎯 Screen changed to:', screen);
+        setActiveScreen(screen);
+    };
+
     return (
         <section className="relative min-h-screen bg-slate-950 flex items-center overflow-hidden">
             {/* Animated Background Gradient */}
@@ -100,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-10" />
 
                         {/* Interactive Screens Stack */}
-                        <HeroScreensStack onScreenChange={setActiveScreen} />
+                        <HeroScreensStack onScreenChange={handleScreenChange} />
                     </motion.div>
 
                     {/* Decorative Light Rays */}
@@ -143,8 +148,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                     </div>
 
                     {/* Annotation card */}
-                    <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 backdrop-blur-md border border-cyan-500/40 rounded-xl px-4 py-3 shadow-xl">
-                        <div className="flex items-center gap-2.5">
+                    <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 backdrop-blur-md border border-cyan-500/40 rounded-lg px-3 py-2 shadow-xl">
+                        <div className="flex items-center gap-2">
                             <motion.div
                                 animate={{
                                     scale: [1, 1.3, 1],
@@ -155,9 +160,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                                     repeat: Infinity,
                                     ease: "easeInOut",
                                 }}
-                                className="w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
+                                className="w-2 h-2 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
                             />
-                            <span className="text-cyan-300 text-sm font-semibold whitespace-nowrap">
+                            <span className="text-cyan-300 text-xs font-medium whitespace-nowrap">
                                 Probá buscando una persona en ARCA
                             </span>
                         </div>
