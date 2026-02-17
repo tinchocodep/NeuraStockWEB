@@ -125,7 +125,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                                 ease: "easeInOut"
                             }
                         }}
-                        className="absolute top-14 left-10 pointer-events-none z-[9999]"
+                        className="absolute top-4 left-10 pointer-events-none z-[9999]"
                     >
                         <div className="relative">
                             {/* Glow effect */}
