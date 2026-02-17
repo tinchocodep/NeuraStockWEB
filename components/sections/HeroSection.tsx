@@ -121,15 +121,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                                     ease: "easeInOut"
                                 }
                             }}
-                            className="absolute top-4 left-4 pointer-events-none z-50"
+                            className="absolute top-2 left-2 pointer-events-none z-50"
                         >
                             <div className="relative">
                                 {/* Glow effect */}
                                 <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-lg" />
 
                                 {/* Banner card */}
-                                <div className="relative bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-3 shadow-2xl shadow-cyan-500/30">
-                                    <div className="flex items-center gap-3">
+                                <div className="relative bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 backdrop-blur-md border-2 border-cyan-400/50 rounded-md px-2.5 py-1.5 shadow-2xl shadow-cyan-500/30">
+                                    <div className="flex items-center gap-2">
                                         <motion.div
                                             animate={{
                                                 scale: [1, 1.4, 1],
@@ -140,9 +140,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
                                                 repeat: Infinity,
                                                 ease: "easeInOut",
                                             }}
-                                            className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/70"
+                                            className="w-2 h-2 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/70"
                                         />
-                                        <span className="text-cyan-200 text-sm font-semibold whitespace-nowrap">
+                                        <span className="text-cyan-200 text-xs font-medium whitespace-nowrap">
                                             👉 Probá buscando una persona en ARCA
                                         </span>
                                     </div>
