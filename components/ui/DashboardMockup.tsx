@@ -12,9 +12,9 @@ import NumberTicker from './NumberTicker';
 
 const DashboardMockup: React.FC = () => {
     return (
-        <div className="w-full bg-[#0a0f1c] rounded-2xl p-5 text-white">
+        <div className="w-full bg-[#0a0f1c] rounded-2xl p-3 text-white">
             {/* Header */}
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center justify-between mb-3">
                 <div>
                     <h1 className="text-2xl font-bold text-white mb-1">NEURACALL</h1>
                     <p className="text-slate-400 text-xs">Métricas clave del inventario</p>
@@ -26,7 +26,7 @@ const DashboardMockup: React.FC = () => {
             </div>
 
             {/* Main Inventory Card */}
-            <div className="bg-gradient-to-br from-emerald-900/40 to-emerald-950/20 border border-emerald-500/30 rounded-xl p-5 mb-4">
+            <div className="bg-gradient-to-br from-emerald-900/40 to-emerald-950/20 border border-emerald-500/30 rounded-xl p-3 mb-3">
                 <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
                         <p className="text-emerald-400 text-xs font-medium mb-1.5 uppercase tracking-wide">
@@ -46,7 +46,7 @@ const DashboardMockup: React.FC = () => {
             </div>
 
             {/* Metrics Grid */}
-            <div className="grid grid-cols-4 gap-3 mb-4">
+            <div className="grid grid-cols-4 gap-2 mb-3">
                 {/* Productos */}
                 <div className="bg-slate-900 border border-slate-800/50 rounded-lg p-3">
                     <div className="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-2">
