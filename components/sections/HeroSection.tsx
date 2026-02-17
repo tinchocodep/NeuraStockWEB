@@ -19,7 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headline, subheadline }) => {
 
     const handleScreenChange = (screen: 1 | 2) => {
         console.log('🎯 Screen changed to:', screen);
-        setActiveScreen(screen);
+        setActiveScreen(screen); // Force reload
     };
 
     return (
