@@ -25,15 +25,20 @@ const HeroScreensStack: React.FC<HeroScreensStackProps> = ({ onScreenChange }) =
     };
 
     const handleMouseEnter = (screen: 1 | 2) => {
+        // Don't do anything if already on this screen
+        if (activeScreen === screen) {
+            return;
+        }
+
         // Clear any existing timeout
         if (hoverTimeoutRef.current) {
             clearTimeout(hoverTimeoutRef.current);
         }
 
-        // Set a new timeout to change the screen after 300ms
+        // Set a new timeout to change the screen after 500ms
         hoverTimeoutRef.current = setTimeout(() => {
             handleScreenChange(screen);
-        }, 300);
+        }, 500);
     };
 
     const handleMouseLeave = () => {
