@@ -37,15 +37,14 @@ const useArcaSearch = (
         setError(null);
 
         try {
-            // Webhook URL de n8n para búsqueda de personas en ARCA
-            const webhookUrl = 'https://n8n.neuracall.net/webhook-test/BuscarPersonasPruebaDomicilio';
+            // Proxy local para evitar CORS (llama a n8n desde el server)
+            const proxyUrl = '/api/arca-search';
 
             console.log('🔍 Buscando CUIT:', cuit);
-            console.log('📡 URL:', webhookUrl);
+            console.log('📡 URL:', proxyUrl);
 
-            const response = await fetch(webhookUrl, {
+            const response = await fetch(proxyUrl, {
                 method: 'POST',
-                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
