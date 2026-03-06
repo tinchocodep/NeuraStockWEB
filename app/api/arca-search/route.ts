@@ -5,8 +5,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-
-const WEBHOOK_URL = 'https://n8n.neuracall.net/webhook-test/BuscarPersonasPruebaDomicilio';
+const WEBHOOK_URL = 'https://n8n.neuracall.net/webhook/BuscarPersonasPruebaDomicilio';
 
 export async function POST(request: NextRequest) {
     try {
