@@ -38,7 +38,7 @@ const useArcaSearch = (
 
         try {
             // Webhook URL de n8n para búsqueda de personas en ARCA
-            const webhookUrl = 'https://n8n.neuracall.net/webhook/BuscarPersonas';
+            const webhookUrl = 'https://n8n.neuracall.net/webhook-test/BuscarPersonasPruebaDomicilio';
 
             console.log('🔍 Buscando CUIT:', cuit);
             console.log('📡 URL:', webhookUrl);
